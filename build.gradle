@@ -1,0 +1,68 @@
+group 'org.openrndr.guide'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.3.11'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.openrndr:dokgen:040fa6c827'
+        classpath "org.ajoberstar:gradle-git-publish:2.0.0"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'org.openrndr.dokgen-gradle'
+apply plugin: 'org.ajoberstar.git-publish'
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.github.openrndr:dokgen:040fa6c827'
+}
+
+dokgen {
+    runner {
+        jvmArgs = ["-Xmx2g"]
+    }
+    examples {
+        webRootUrl = "https://github.com/krksgbr/dokgen-example/blob/master/src/main/kotlin"
+    }
+    docsify {
+        media = [file("$projectDir/media")]
+        assets = [file("$projectDir/docsify-assets")]
+    }
+
+}
+
+gitPublish {
+    repoUri = "git@github.com:krksgbr/dokgen-example.git"
+    branch = "gh-pages"
+    repoDir = file("$buildDir/gitrepo-docs")
+    contents.from("build/dokgen/docsify") {
+        exclude "node_modules"
+    }
+    commitMessage = "Update docs"
+}
+
