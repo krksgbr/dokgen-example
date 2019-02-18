@@ -1,5 +1,3 @@
-# The OPENRNDR guide
+# OPENRNDR Guide
 
-This is an extensive effort in documenting the [OPENRNDR](https://github.com/openrndr/openrndr) library.
-
-Please consult the [human readable version](http://guide.openrndr.org).
+Writing in progress. Intended to be read in non-linear fashion.
