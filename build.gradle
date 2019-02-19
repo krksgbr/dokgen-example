@@ -53,14 +53,13 @@ dokgen {
         media = [file("$projectDir/media")]
         assets = [file("$projectDir/docsify-assets")]
     }
-
 }
 
 gitPublish {
     repoUri = "git@github.com:krksgbr/dokgen-example.git"
     branch = "gh-pages"
     repoDir = file("$buildDir/gitrepo-docs")
-    contents.from("build/dokgen/docsify") {
+    contents.from("build/dokgen/docsify/docs") {
         exclude "node_modules"
     }
     commitMessage = "Update docs"
