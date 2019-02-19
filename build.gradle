@@ -12,7 +12,7 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.github.openrndr:dokgen:040fa6c827'
+        classpath 'com.github.openrndr:dokgen:bdc8d110d4'
         classpath "org.ajoberstar:gradle-git-publish:2.0.0"
     }
 }
@@ -39,7 +39,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation 'com.github.openrndr:dokgen:040fa6c827'
+    implementation 'com.github.openrndr:dokgen:bdc8d110d4'
 }
 
 dokgen {
