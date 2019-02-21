@@ -28,7 +28,7 @@ List(100) { i ->
 }
 ```
 
-[Link to the full example](https://github.com/openrndr/openrndr-examples/blob/master/src/main/kotlin/examples/01_Chapter1/C00SimpleUsage000.kt)
+[Link to the full example](https://github.com/krksgbr/dokgen-example/blob/master/src/main/kotlin/examples/01_Chapter1/C00SimpleUsage000.kt)
 
 Here's a code snippet
 
