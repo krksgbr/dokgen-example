@@ -1,5 +1,5 @@
 const configs = {
-    repoLink: 'https://github.com/openrndr/openrndr-guide',
+    repoLink: 'https://github.com/krksgbr/dokgen-example',
 };
 
 
@@ -26,7 +26,7 @@ window.$docsify = {
         plugins.linkify,
         plugins.editLink,
     ],
-    homepage: '01_Chapter1/C00IntroToDokGen.md',
+    homepage: '01_Chapter1/C00SimpleUsage.md',
     themeColor: '#fdd0dd',
 };
 
